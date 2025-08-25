@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ConcertController {
     // TODO: create hashmap of concerts for storing data
-    private int nextId;
     private Map<Integer,Concert> concerts=new HashMap<>();
+    private static int nextId=1;
 
     //TODO: add initbinder to convert date
     @InitBinder
@@ -47,7 +47,7 @@ public class ConcertController {
     @GetMapping("/add-concert")
     public String addAConcertForm(Model model) {
         // TODO: pass blank concert to a form
-         model.addAttribute("concerts",new Concert());
+         model.addAttribute("concert",new Concert());
         // TODO: return a template for concert form
         return "add-concert-form";
     }
@@ -60,7 +60,7 @@ public class ConcertController {
         concerts.put(nextId,concert);
         nextId++;
         // TODO: redirect to list concerts
-        return "redirect:concerts";
+        return "redirect:/concerts";
     }
 
     @GetMapping("/delete-concert/{id}")
@@ -69,7 +69,7 @@ public class ConcertController {
         concerts.remove(id);
 
         // TODO: redirect to list concerts
-        return "redirect:concerts";
+        return "redirect:/concerts";
     }
 
     
@@ -79,7 +79,7 @@ public class ConcertController {
         concerts.clear();
         nextId=1;
         // TODO: redirect to list concerts
-        return "redirect:concerts";
+        return "redirect:/concerts";
     }
 
 }

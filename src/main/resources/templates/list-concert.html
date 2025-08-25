@@ -23,11 +23,11 @@
             <th>id</th>
         </tr>
         <tr th:each="concert:${concerts}">
-            <td th:text="${concer.id}">1</td>
-            <td th:text="${concer.title}">sample title</td>
-            <td th:text="${concer.performer}">performer</td>
-            <td th:text="${#dates.formap(concert.data,'yyyy-MM-DD')}">2025-01-01</td>
-            <td th:text="${concer.description}">sample description</td>
+            <td th:text="${concert.id}">1</td>
+            <td th:text="${concert.title}">sample title</td>
+            <td th:text="${concert.performer}">performer</td>
+            <td th:text="${concert.date}"></td>
+            <td th:text="${concert.description}">sample description</td>
             <td><a <td th:hreh="@{'/delete-concert/'+${concert.id}}">delete<a></a>
             
             </td>

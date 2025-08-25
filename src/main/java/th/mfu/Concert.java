@@ -8,7 +8,7 @@ public class Concert {
     private int id;
     private String title;
     private String performer;
-    private Date deat;
+    private Date date;
     private String description;
 
     public Concert() {
@@ -36,11 +36,11 @@ public class Concert {
     public void setPerformer(String performer) {
         this.performer = performer;
     }
-    public Date getDeat() {
-        return deat;
+    public Date getDate() {
+        return date;
     }
-    public void setDeat(Date deat) {
-        this.deat = deat;
+    public void setDate(Date date) {
+        this.date = date;
     }
     public String getDescription() {
         return description;
